@@ -1,0 +1,106 @@
+BODY {
+	background: #ffffff;
+	color: #000000;
+	font-family: arial, helvetica, sans-serif;
+	font-size: small;
+}
+
+BODY.welcome {
+	color: #000000;
+	font-family: arial, helvetica, sans-serif;
+	font-size: small;
+}
+A {
+	color: #004060;
+}
+A:hover {
+	color: #ff0000;
+	text-decoration: underline;
+}
+
+A.footer {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+A.footer:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+A.title {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+A.title:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+H1, H2, H3, H4, H5, H6 {
+	font-family: arial, helvetica, sans-serif;
+	font-weight: bold;
+	color: #000000;
+}
+
+TABLE {
+	border: 0px
+}
+
+TD.title {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #004060
+}
+
+TD.footer {
+	font-family: arial, helvetica, sans-serif;
+	font-size: x-small;
+	color: #ffffff;
+	background-color: #004060;
+	border-color: #801000;
+
+}
+
+P, OL, UL, TD, A, BLOCKQUOTE, CITE {
+	font-family: arial, helvetica, sans-serif
+}
+	
+P.small {
+	font-size: x-small;
+}
+P.footer {
+	font-family: arial, helvetica, sans-serif;
+	font-size: x-small;
+}
+
+IMG.photo {
+	margin-left: 10px;
+	margin-right: 10px
+	
+}
+	
+body {
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small
+}
+
+dt {
+	font-weight: bold;
+	line-height: 1.8
+
+}
+dd {
+	font-weight: normal;
+}img {  margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px}
+
+h1.Foo {
+	width: 100%;
+	background-color: #004060;
+	color: #ffffff;
+	text-align: right;
+	font-size: 15px;
+	padding: 5px;
+}
