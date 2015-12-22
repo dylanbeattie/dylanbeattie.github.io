@@ -2,21 +2,27 @@
 <head>
 <title>Happy Christmas, Internets!</title>
 <script type="text/javascript">
-function go(filename) {
-	document.images[0].src = filename + ".png";
-	console.log(filename);
-}
-
-function reset() {
-	document.images[0].src = "x.png";
-}
+function go(filename) { document.images[0].src = filename + ".png"; }
+function reset() { document.images[0].src = "x.png"; }
 </script>
 <style>
-img { margin: 32px auto; }
+html { font-family: Trebuchet MS, Arial, sans-serif; }
+img { margin: 0px auto; display: block; }
+header { position: absolute; top: 14px; left: 14px; }
+h1 { font-size: 18px; }
+h2 { font-size: 14px; }
 </style>
 </head>
 <body>
+<header>
+<h1>A Few of my Favourite Things</h1>
+<h2>An interactive Venn diagram by <a href="https://twitter.com/dylanbeattie">@dylanbeattie</a>.</h2>
+<h2>Go on. Give it a poke.</h2>
+<h2>Happy Christmas!</h2>
+</header>
+<article>
 <img id="christmas" src="x.png" border="0" width="945" height="895" usemap="#star_map" alt="Happy Christmas!" />
+</article>
 <map name="star_map">
 <area id="c" onmouseover="go('c');" onmouseout="reset();" title="Coding" href="https://www.madewithcode.com/projects/insideout" shape="poly" coords="352,307,53,335,279,537,164,370,160,370" style="outline:none;" target="_self" />
 <area id="f" onmouseover="go('f');" onmouseout="reset();" title="American Pale Ale" href="http://darkstarbrewing.co.uk/beer/" shape="poly" coords="667,534,735,830,471,678,669,736" style="outline:none;" target="_self" />
@@ -31,7 +37,7 @@ img { margin: 32px auto; }
 <area id="mfnc" onmouseover="go('mfnc');" onmouseout="reset();" title="Cherry Pie" href="https://youtu.be/OjyZKfdwlng?t=65" shape="poly" coords="593,309,666,409,555,445,573,504,512,460,537,387,620,386" style="outline:none;" target="_self" />
 <area id="mn" onmouseover="go('mn');" onmouseout="reset();" title="Pink Floyd" href="https://youtu.be/G4i8tzFbTAk?t=274" shape="poly" coords="594,309,788,370,669,535,695,400" style="outline:none;" target="_self" />
 <area id="mnc" onmouseover="go('mnc');" onmouseout="reset();" title="Chroma Key" href="https://play.spotify.com/track/6eaJIZ2x41y7aGR5TYOoo6" shape="poly" coords="595,310,695,401,668,536,640,456,574,505,554,445,667,409" style="outline:none;" target="_self" />
-<area id="n" onmouseover="go('n');" onmouseout="reset();" title="Spotlight" href="http://www.spotlight.com/" shape="poly" coords="472,676,211,832,280,537,279,739" style="outline:none;" target="_self" />
+<area id="n" onmouseover="go('n');" onmouseout="reset();" title="Spotlight" href="http://backstage.spotlight.com/" shape="poly" coords="472,676,211,832,280,537,279,739" style="outline:none;" target="_self" />
 <area id="nc" onmouseover="go('nc');" onmouseout="reset();" title="Chewbacca" href="https://twitter.com/TheWookieeRoars" shape="poly" coords="570,505,669,537,640,454" style="outline:none;" target="_self" />
 <area id="s" onmouseover="go('s');" onmouseout="reset();" title="Skiing" href="https://www.youtube.com/watch?v=ygxufRprWpY" shape="poly" coords="353,307,473,30,592,303,473,145" style="outline:none;" target="_self" />
 <area id="sc" onmouseover="go('sc');" onmouseout="reset();" title="Candles" href="https://en.wikipedia.org/wiki/Candle" shape="poly" coords="473,578,472,679,541,628" style="outline:none;" target="_self" />
