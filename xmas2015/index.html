@@ -2,25 +2,33 @@
 <head>
 <title>Happy Christmas, Internets!</title>
 <script type="text/javascript">
-var currentFilename;
-function go(filename) {
-	var alreadyLoaded = (currentFilename == filename);
-	currentFilename = filename;
-	if (! alreadyLoaded) {
-		document.images[0].src = filename + ".png";
-		event.preventDefault();
-	}
-	return(alreadyLoaded);
+var isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+function mo(filename) {
+	document.images[0].src = filename + ".png";
 }
-function reset() { /* document.images[0].src = "x.png"; */ }
+
+function oc(filename) {
+	//if (! isTouchDevice) return(true);
+	var area = document.getElementById(filename);
+	var touchLink = document.getElementById("touch_link");
+	touchLink.href = area.href;
+	touchLink.innerHTML = "Why we love " + area.title + "...";
+	document.images[0].src = filename + ".png";
+	event.preventDefault();
+	return(false);
+}
+function reset() { document.images[0].src = "x.png"; }
 </script>
 <style>
 html { font-family: Trebuchet MS, Arial, sans-serif; }
 img { margin: 0px auto; display: block; }
 img.preload { width: 1px; height: 1px; display: inline; position: absolute; }
-header { position: absolute; top: 14px; left: 14px; }
+header { position: absolute; top: 16px; left: 16px; }
+a#touch_link { position: absolute; top: 24px; right: 16px; font-weight: bold; }
 h1 { font-size: 18px; }
 h2 { font-size: 14px; }
+p { font-size: 10px; }
 </style>
 </head>
 <body>
@@ -28,43 +36,45 @@ h2 { font-size: 14px; }
 <h1>A Few of my Favourite Things</h1>
 <h2>An interactive Venn diagram by <a href="https://twitter.com/dylanbeattie">@dylanbeattie</a>.</h2>
 <h2>Go on. Give it a poke.</h2>
+<p>(On desktops, everything's a link to stuff. On mobile, they just light up.)</p>
 <h2>Happy Christmas!</h2>
 </header>
+<a href="#" id="touch_link"></a>
 <article>
 <img id="christmas" src="x.png" border="0" width="945" height="895" usemap="#star_map" alt="Happy Christmas!" />
 </article>
 <map name="star_map">
-<area id="c" onmouseover="go('c');" onclick="return(go('c'));" onmouseout="reset();" title="Coding" href="https://www.madewithcode.com/projects/insideout" shape="poly" coords="352,307,53,335,279,537,164,370,160,370" style="outline:none;" target="_self" />
-<area id="f" onmouseover="go('f');" onclick="return(go('f'));" onmouseout="reset();" title="American Pale Ale" href="http://darkstarbrewing.co.uk/beer/" shape="poly" coords="667,534,735,830,471,678,669,736" style="outline:none;" target="_self" />
-<area id="fc" onmouseover="go('fc');" onclick="return(go('fc'));" onmouseout="reset();" title="Cheeseburgers" href="http://youngandfoodish.com/london/top-10-burgers-in-london/" shape="poly" coords="474,680,669,739,670,534,609,662" style="outline:none;" target="_self" />
-<area id="fn" onmouseover="go('fn');" onclick="return(go('fn'));" onmouseout="reset();" title="Spare Ribs" href="http://www.timeout.com/london/restaurants/londons-best-ribs" shape="poly" coords="508,307,534,391,596,305" style="outline:none;" target="_self" />
-<area id="fnc" onmouseover="go('fnc');" onclick="return(go('fnc'));" onmouseout="reset();" title="Chocolate" href="http://www.greenandblacks.co.uk/" shape="poly" coords="592,305,620,389,535,387" style="outline:none;" target="_self" />
-<area id="m" onmouseover="go('m');" onclick="return(go('m'));" onmouseout="reset();" title="Fender Stratocaster" href="http://intl.fender.com/en-GB/guitars/stratocaster/" shape="poly" coords="592,311,897,335,669,539,787,370" style="outline:none;" target="_self" />
-<area id="mc" onmouseover="go('mc');" onclick="return(go('mc'));" onmouseout="reset();" title="Chapman Stick" href="https://www.youtube.com/watch?v=a7kIclA4yq4" shape="poly" coords="353,308,157,370,280,533,251,400" style="outline:none;" target="_self" />
-<area id="mf" onmouseover="go('mf');" onclick="return(go('mf'));" onmouseout="reset();" title="Meat Loaf" href="meatloaf.jpg" shape="poly" coords="355,307,411,390,327,388" style="outline:none;" target="_self" />
-<area id="mfc" onmouseover="go('mfc');" onclick="return(go('mfc'));" onmouseout="reset();" title="Cream" href="https://youtu.be/pkae0-TgrRU?t=21" shape="poly" coords="411,386,390,447,278,410,277,532,249,400,353,304,328,389" style="outline:none;" target="_self" />
-<area id="mfn" onmouseover="go('mfn');" onclick="return(go('mfn'));" onmouseout="reset();" title="Salt'n'Pepa" href="https://www.youtube.com/watch?v=vCadcBR95oU" shape="poly" coords="351,306,410,388,437,307" style="outline:none;" target="_self" />
-<area id="mfnc" onmouseover="go('mfnc');" onclick="return(go('mfnc'));" onmouseout="reset();" title="Cherry Pie" href="https://youtu.be/OjyZKfdwlng?t=65" shape="poly" coords="593,309,666,409,555,445,573,504,512,460,537,387,620,386" style="outline:none;" target="_self" />
-<area id="mn" onmouseover="go('mn');" onclick="return(go('mn'));" onmouseout="reset();" title="Pink Floyd" href="https://youtu.be/G4i8tzFbTAk?t=274" shape="poly" coords="594,309,788,370,669,535,695,400" style="outline:none;" target="_self" />
-<area id="mnc" onmouseover="go('mnc');" onclick="return(go('mnc'));" onmouseout="reset();" title="Chroma Key" href="https://play.spotify.com/track/6eaJIZ2x41y7aGR5TYOoo6" shape="poly" coords="595,310,695,401,668,536,640,456,574,505,554,445,667,409" style="outline:none;" target="_self" />
-<area id="n" onmouseover="go('n');" onclick="return(go('n'));" onmouseout="reset();" title="Spotlight" href="http://backstage.spotlight.com/" shape="poly" coords="472,676,211,832,280,537,279,739" style="outline:none;" target="_self" />
-<area id="nc" onmouseover="go('nc');" onclick="return(go('nc'));" onmouseout="reset();" title="Chewbacca" href="https://twitter.com/TheWookieeRoars" shape="poly" coords="570,505,669,537,640,454" style="outline:none;" target="_self" />
-<area id="s" onmouseover="go('s');" onclick="return(go('s'));" onmouseout="reset();" title="Skiing" href="https://www.youtube.com/watch?v=ygxufRprWpY" shape="poly" coords="353,307,473,30,592,303,473,145" style="outline:none;" target="_self" />
-<area id="sc" onmouseover="go('sc');" onclick="return(go('sc'));" onmouseout="reset();" title="Candles" href="https://en.wikipedia.org/wiki/Candle" shape="poly" coords="473,578,472,679,541,628" style="outline:none;" target="_self" />
-<area id="sf" onmouseover="go('sf');" onclick="return(go('sf'));" onmouseout="reset();" title="Mulled Wine" href="http://www.bbc.co.uk/food/recipes/mulledwine_8156" shape="poly" coords="474,144,592,308,473,239,354,307" style="outline:none;" target="_self" />
-<area id="sfc" onmouseover="go('sfc');" onclick="return(go('sfc'));" onmouseout="reset();" title="Crackers" href="https://en.wikipedia.org/wiki/Cracker" shape="poly" coords="473,579,524,543,592,636,665,536,612,663,473,677,540,628" style="outline:none;" target="_self" />
-<area id="sfnc" onmouseover="go('sfnc');" onclick="return(go('sfnc'));" onmouseout="reset();" title="Chestnuts" href="http://www.bbcgoodfood.com/howto/guide/how-roast-chestnuts" shape="poly" coords="668,536,594,638,524,542,473,578,496,502,577,506,572,508,598,586" style="outline:none;" target="_self" />
-<area id="sm" onmouseover="go('sm');" onclick="return(go('sm'));" onmouseout="reset();" title="Jingle Bells" href="https://youtu.be/9c0X9AwsH1U?t=14" shape="poly" coords="279,536,373,505,346,585" style="outline:none;" target="_self" />
-<area id="sfn" onmouseover="go('sfn');" onclick="return(go('sfn'));" onmouseout="reset();" title="Mince Pies" href="http://www.nigella.com/recipes/view/STAR-TOPPED-MINCE-PIES-5238" shape="poly" coords="354,306,474,240,593,308,508,306,534,388,474,387,474,269" style="outline:none;" target="_self" />
-<area id="smc" onmouseover="go('smc');" onclick="return(go('smc'));" onmouseout="reset();" title="Candlelight Carol" href="https://www.youtube.com/watch?v=SSZqYn0UtNY" shape="poly" coords="472,578,406,626,473,679" style="outline:none;" target="_self" />
-<area id="smf" onmouseover="go('smf');" onclick="return(go('smf'));" onmouseout="reset();" title="The Nutcracker" href="https://en.wikipedia.org/wiki/Nutcracker_(disambiguation)" shape="poly" coords="306,456,278,537,373,505" style="outline:none;" target="_self" />
-<area id="smfc" onmouseover="go('smfc');" onclick="return(go('smfc'));" onmouseout="reset();" title="Cranberries" href="https://en.wikipedia.org/wiki/Cranberries" shape="poly" coords="279,527,279,409,391,445,411,389,436,460,374,505,308,456" style="outline:none;" target="_self" />
-<area id="smfn" onmouseover="go('smfn');" onclick="return(go('smfn'));" onmouseout="reset();" title="Sugar Mice" href="https://youtu.be/kIPrJmzG7Ss?t=120" shape="poly" coords="352,309,473,269,473,386,534,388,473,432,412,389,436,308" style="outline:none;" target="_self" />
-<area id="smn" onmouseover="go('smn');" onclick="return(go('smn'));" onmouseout="reset();" title="Santa Baby" href="https://www.youtube.com/watch?v=7Ew_k_LzQWI" shape="poly" coords="336,663,281,537,347,583,373,505,423,541,355,636,472,677" style="outline:none;" target="_self" />
-<area id="smnc" onmouseover="go('smnc');" onclick="return(go('smnc'));" onmouseout="reset();" title="Carolling" href="http://dictionary.reference.com/browse/carolling" shape="poly" coords="373,504,448,503,474,580,404,627,474,677,353,639,421,540" style="outline:none;" target="_self" />
-<area id="sn" onmouseover="go('sn');" onclick="return(go('sn'));" onmouseout="reset();" title="Mistletoe" href="http://www.theguardian.com/lifeandstyle/shortcuts/2015/dec/21/kiss-under-mistletoe-victorian-tradition-dying-out" shape="poly" coords="472,677,280,740,279,536,338,660" style="outline:none;" target="_self" />
-<area id="snc" onmouseover="go('snc');" onclick="return(go('snc'));" onmouseout="reset();" title="Coal Fires" href="https://books.google.co.uk/books/about/Round_about_Our_Coal_Fire.html?id=ZvyjnQEACAAJ&redir_esc=y" shape="poly" coords="573,504,667,535,599,586" style="outline:none;" target="_self" />
-<area id="smfnc" onmouseover="go('smfnc');" onclick="return(go('smfnc'));" onmouseout="reset();" title="Christmas!" href="http://www.imdb.com/title/tt0095016/" shape="poly" coords="410,387,475,433,533,387,512,458,574,504,495,504,473,579,451,504,370,506,434,460" style="outline:none;" target="_self" />
+<area id="c" onmouseover="mo('c');" onclick="return(oc('c'));" onmouseout="reset();" title="Coding" href="https://www.madewithcode.com/projects/insideout" shape="poly" coords="352,307,53,335,279,537,164,370,160,370" style="outline:none;" target="_self" />
+<area id="f" onmouseover="mo('f');" onclick="return(oc('f'));" onmouseout="reset();" title="American Pale Ale" href="http://darkstarbrewing.co.uk/beer/" shape="poly" coords="667,534,735,830,471,678,669,736" style="outline:none;" target="_self" />
+<area id="fc" onmouseover="mo('fc');" onclick="return(oc('fc'));" onmouseout="reset();" title="Cheeseburgers" href="http://youngandfoodish.com/london/top-10-burgers-in-london/" shape="poly" coords="474,680,669,739,670,534,609,662" style="outline:none;" target="_self" />
+<area id="fn" onmouseover="mo('fn');" onclick="return(oc('fn'));" onmouseout="reset();" title="Spare Ribs" href="http://www.timeout.com/london/restaurants/londons-best-ribs" shape="poly" coords="508,307,534,391,596,305" style="outline:none;" target="_self" />
+<area id="fnc" onmouseover="mo('fnc');" onclick="return(oc('fnc'));" onmouseout="reset();" title="Chocolate" href="http://www.greenandblacks.co.uk/" shape="poly" coords="592,305,620,389,535,387" style="outline:none;" target="_self" />
+<area id="m" onmouseover="mo('m');" onclick="return(oc('m'));" onmouseout="reset();" title="Fender Stratocaster" href="http://intl.fender.com/en-GB/guitars/stratocaster/" shape="poly" coords="592,311,897,335,669,539,787,370" style="outline:none;" target="_self" />
+<area id="mc" onmouseover="mo('mc');" onclick="return(oc('mc'));" onmouseout="reset();" title="Chapman Stick" href="https://www.youtube.com/watch?v=a7kIclA4yq4" shape="poly" coords="353,308,157,370,280,533,251,400" style="outline:none;" target="_self" />
+<area id="mf" onmouseover="mo('mf');" onclick="return(oc('mf'));" onmouseout="reset();" title="Meat Loaf" href="meatloaf.jpg" shape="poly" coords="355,307,411,390,327,388" style="outline:none;" target="_self" />
+<area id="mfc" onmouseover="mo('mfc');" onclick="return(oc('mfc'));" onmouseout="reset();" title="Cream" href="https://youtu.be/pkae0-TgrRU?t=21" shape="poly" coords="411,386,390,447,278,410,277,532,249,400,353,304,328,389" style="outline:none;" target="_self" />
+<area id="mfn" onmouseover="mo('mfn');" onclick="return(oc('mfn'));" onmouseout="reset();" title="Salt'n'Pepa" href="https://www.youtube.com/watch?v=vCadcBR95oU" shape="poly" coords="351,306,410,388,437,307" style="outline:none;" target="_self" />
+<area id="mfnc" onmouseover="mo('mfnc');" onclick="return(oc('mfnc'));" onmouseout="reset();" title="Cherry Pie" href="https://youtu.be/OjyZKfdwlng?t=65" shape="poly" coords="593,309,666,409,555,445,573,504,512,460,537,387,620,386" style="outline:none;" target="_self" />
+<area id="mn" onmouseover="mo('mn');" onclick="return(oc('mn'));" onmouseout="reset();" title="Pink Floyd" href="https://youtu.be/G4i8tzFbTAk?t=274" shape="poly" coords="594,309,788,370,669,535,695,400" style="outline:none;" target="_self" />
+<area id="mnc" onmouseover="mo('mnc');" onclick="return(oc('mnc'));" onmouseout="reset();" title="Chroma Key" href="https://play.spotify.com/track/6eaJIZ2x41y7aGR5TYOoo6" shape="poly" coords="595,310,695,401,668,536,640,456,574,505,554,445,667,409" style="outline:none;" target="_self" />
+<area id="n" onmouseover="mo('n');" onclick="return(oc('n'));" onmouseout="reset();" title="Spotlight" href="http://backstage.spotlight.com/" shape="poly" coords="472,676,211,832,280,537,279,739" style="outline:none;" target="_self" />
+<area id="nc" onmouseover="mo('nc');" onclick="return(oc('nc'));" onmouseout="reset();" title="Chewbacca" href="https://twitter.com/TheWookieeRoars" shape="poly" coords="570,505,669,537,640,454" style="outline:none;" target="_self" />
+<area id="s" onmouseover="mo('s');" onclick="return(oc('s'));" onmouseout="reset();" title="Skiing" href="https://www.youtube.com/watch?v=ygxufRprWpY" shape="poly" coords="353,307,473,30,592,303,473,145" style="outline:none;" target="_self" />
+<area id="sc" onmouseover="mo('sc');" onclick="return(oc('sc'));" onmouseout="reset();" title="Candles" href="https://en.wikipedia.org/wiki/Candle" shape="poly" coords="473,578,472,679,541,628" style="outline:none;" target="_self" />
+<area id="sf" onmouseover="mo('sf');" onclick="return(oc('sf'));" onmouseout="reset();" title="Mulled Wine" href="http://www.bbc.co.uk/food/recipes/mulledwine_8156" shape="poly" coords="474,144,592,308,473,239,354,307" style="outline:none;" target="_self" />
+<area id="sfc" onmouseover="mo('sfc');" onclick="return(oc('sfc'));" onmouseout="reset();" title="Crackers" href="https://en.wikipedia.org/wiki/Cracker" shape="poly" coords="473,579,524,543,592,636,665,536,612,663,473,677,540,628" style="outline:none;" target="_self" />
+<area id="sfnc" onmouseover="mo('sfnc');" onclick="return(oc('sfnc'));" onmouseout="reset();" title="Chestnuts" href="http://www.bbcgoodfood.com/howto/guide/how-roast-chestnuts" shape="poly" coords="668,536,594,638,524,542,473,578,496,502,577,506,572,508,598,586" style="outline:none;" target="_self" />
+<area id="sm" onmouseover="mo('sm');" onclick="return(oc('sm'));" onmouseout="reset();" title="Jingle Bells" href="https://youtu.be/9c0X9AwsH1U?t=14" shape="poly" coords="279,536,373,505,346,585" style="outline:none;" target="_self" />
+<area id="sfn" onmouseover="mo('sfn');" onclick="return(oc('sfn'));" onmouseout="reset();" title="Mince Pies" href="http://www.nigella.com/recipes/view/STAR-TOPPED-MINCE-PIES-5238" shape="poly" coords="354,306,474,240,593,308,508,306,534,388,474,387,474,269" style="outline:none;" target="_self" />
+<area id="smc" onmouseover="mo('smc');" onclick="return(oc('smc'));" onmouseout="reset();" title="Candlelight Carol" href="https://www.youtube.com/watch?v=SSZqYn0UtNY" shape="poly" coords="472,578,406,626,473,679" style="outline:none;" target="_self" />
+<area id="smf" onmouseover="mo('smf');" onclick="return(oc('smf'));" onmouseout="reset();" title="The Nutcracker" href="https://en.wikipedia.org/wiki/Nutcracker_(disambiguation)" shape="poly" coords="306,456,278,537,373,505" style="outline:none;" target="_self" />
+<area id="smfc" onmouseover="mo('smfc');" onclick="return(oc('smfc'));" onmouseout="reset();" title="Cranberries" href="https://en.wikipedia.org/wiki/Cranberries" shape="poly" coords="279,527,279,409,391,445,411,389,436,460,374,505,308,456" style="outline:none;" target="_self" />
+<area id="smfn" onmouseover="mo('smfn');" onclick="return(oc('smfn'));" onmouseout="reset();" title="Sugar Mice" href="https://youtu.be/kIPrJmzG7Ss?t=120" shape="poly" coords="352,309,473,269,473,386,534,388,473,432,412,389,436,308" style="outline:none;" target="_self" />
+<area id="smn" onmouseover="mo('smn');" onclick="return(oc('smn'));" onmouseout="reset();" title="Santa Baby" href="https://www.youtube.com/watch?v=7Ew_k_LzQWI" shape="poly" coords="336,663,281,537,347,583,373,505,423,541,355,636,472,677" style="outline:none;" target="_self" />
+<area id="smnc" onmouseover="mo('smnc');" onclick="return(oc('smnc'));" onmouseout="reset();" title="Carolling" href="http://dictionary.reference.com/browse/carolling" shape="poly" coords="373,504,448,503,474,580,404,627,474,677,353,639,421,540" style="outline:none;" target="_self" />
+<area id="sn" onmouseover="mo('sn');" onclick="return(oc('sn'));" onmouseout="reset();" title="Mistletoe" href="http://www.theguardian.com/lifeandstyle/shortcuts/2015/dec/21/kiss-under-mistletoe-victorian-tradition-dying-out" shape="poly" coords="472,677,280,740,279,536,338,660" style="outline:none;" target="_self" />
+<area id="snc" onmouseover="mo('snc');" onclick="return(oc('snc'));" onmouseout="reset();" title="Coal Fires" href="https://books.google.co.uk/books/about/Round_about_Our_Coal_Fire.html?id=ZvyjnQEACAAJ&redir_esc=y" shape="poly" coords="573,504,667,535,599,586" style="outline:none;" target="_self" />
+<area id="smfnc" onmouseover="mo('smfnc');" onclick="return(oc('smfnc'));" onmouseout="reset();" title="Christmas!" href="http://www.imdb.com/title/tt0095016/" shape="poly" coords="410,387,475,433,533,387,512,458,574,504,495,504,473,579,451,504,370,506,434,460" style="outline:none;" target="_self" />
 </map>
 
 <img src="c.png" class="preload" />
