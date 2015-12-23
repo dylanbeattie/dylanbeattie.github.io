@@ -12,7 +12,7 @@ function oc(filename, event) {
 	var area = document.getElementById(filename);
 	var touchLink = document.getElementById("touch_link");
 	touchLink.href = area.href;
-	touchLink.innerHTML = area.alt;
+	touchLink.innerHTML = area.alt + " &gt;&gt;";
 	mo(filename);
 	event.preventDefault();
 	return(false);
@@ -20,17 +20,16 @@ function oc(filename, event) {
 function reset() { document.images[0].src = "x.png"; }
 </script>
 <style>
-html { font-family: Trebuchet MS, Arial, sans-serif; }
+html { font-family: Trebuchet MS, Arial, sans-serif; margin: 0; padding: 0; }
+div#wrapper { width: 1000px; margin: 10px auto; position: relative; border: 0; padding: 0; }
 img { margin: 0px auto; display: block; }
 img.preload { width: 1px; height: 1px; display: inline; position: absolute; }
-header { position: absolute; top: 16px; left: 16px; }
-footer p a#touch_link { font-size: 14px; font-weight: bold; text-decoration: none; }
-footer p a#touch_link:hover { text-decoration: underline; }
-h1 { font-size: 18px; }
-h2 { font-size: 14px; }
-p { font-size: 12px; text-align: center; }
-div#share_links { text-align: center; width: 600px; margin: 8px auto; padding: 8px; border-top: 1px solid #ccc; }
-footer { position: relative; top: -64px; }
+
+a#touch_link { font-size: 14px; font-weight: bold; text-decoration: none; position: absolute; top: 0px; right: 0px; padding: 4px; }
+a#touch_link:hover { text-decoration: underline; }
+p { margin-top: 0; }
+div#share_links { position: absolute; right: 0px; }
+div#titles { position: absolute; left: 0px; top: 0px; font-size: 14px; text-align: left; line-height: 22px; }
 </style>
 </head>
 <body>
@@ -42,16 +41,20 @@ footer { position: relative; top: -64px; }
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=366471826743977";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<div id="wrapper">
+	<div id="titles">
+		<p><strong>"My Favourite Things"</strong><br />A five-dimensional festive Venn diagram<br />
+		With jokes.</br>
+		Made by <a href="https://twitter.com/dylanbeattie">@dylanbeattie</a>.</p>
+		<div>
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="A five-dimensional festive Venn diagram - with jokes." data-via="dylanbeattie">Tweet</a>
+		<div class="fb-share-button" data-href="http://www.dylanbeattie.net/xmas2015/" data-layout="button_count"></div>
+		</div>
+	</div>
+	<a id="touch_link" target="_blank">&nbsp;</a>
 <article>
 <img id="christmas" src="x.png" border="0" width="945" height="895" usemap="#star_map" alt="Happy Christmas!" />
 </article>
-<footer>
-<p><a href="#" id="touch_link" target="_blank">&nbsp;</a></p>
-<p><strong>'a few of my favourite things'</strong></p>
-<p>a five-dimensional festive Venn diagram by <a href="https://twitter.com/dylanbeattie">@dylanbeattie</a></p>
-<div id="share_links">
-<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="A five-dimensional festive Venn diagram - with jokes." data-via="dylanbeattie">Tweet</a>
-<div class="fb-share-button" data-href="http://www.dylanbeattie.net/xmas2015/" data-layout="button_count"></div>
 </div>
 <map name="star_map">
 <area id="c" onmouseover="mo('c');" onclick="return(oc('c', event));" 			onmouseout="reset();" alt="Code your own Santa Tracker" title='10 PRINT "HAPPY CHRISTMAS"&#13;20 GOTO 10&#13;RUN' href="https://santatracker.google.com/?utm_source=VillageHPP#codelab" shape="poly" coords="352,307,53,335,279,537,164,370,160,370" style="outline:none;"  />
