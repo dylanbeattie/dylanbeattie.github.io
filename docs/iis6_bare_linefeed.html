@@ -72,7 +72,7 @@ mail.dylanbeattie.net internet address = 123.123.123.123
 </pre>
 <p>OK, so now we know that we can send <strong>some</strong> mail to dylanbeattie.net without problems, which indicates that the problem isn't anything to do with the server or the network, it's to do with particular e-mail messages (or the circumstances in which they're sent). Time to do some digging.</p>
 <h3>3.	Analyse the actual SMTP traffic for one of our offending messages</h3>
-  <p>Next thing I did was to install <del>Ethereal</del><a href=https://www.wireshark.org/download.html/">WireShark and the WinPCap capture driver</a> on our server. Ethereal is a network protocol analyser - it'll gather, dissect and analyse the sequences of commands and responses that make up a network session. WinPCap is a driver that allows Ethereal to capture the actual network traffic going to/from your server, so you can see what's going on in real time.</p>
+  <p>Next thing I did was to install <del>Ethereal</del> <a href="https://www.wireshark.org/">WireShark</a> and the WinPCap capture driver on our server. Ethereal is a network protocol analyser - it'll gather, dissect and analyse the sequences of commands and responses that make up a network session. WinPCap is a driver that allows Ethereal to capture the actual network traffic going to/from your server, so you can see what's going on in real time.</p>
 <p>What I basically did here was to </p>
 <ol>
   <li>Log on to our website and create - but don't send - one of the offending mail messages</li>
